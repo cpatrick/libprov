@@ -1,4 +1,4 @@
-set(CTEST_SOURCE_DIRECTORY ".."")
+set(CTEST_SOURCE_DIRECTORY "..")
 set(CTEST_BINARY_DIRECTORY ".")
 include(${CTEST_SOURCE_DIRECTORY}/CMake/travis_common.cmake)
 
