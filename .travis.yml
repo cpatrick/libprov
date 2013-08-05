@@ -12,4 +12,6 @@ script:
   - ctest -V .
 
 after_script:
+  - export SITE_NAME="Travis (${CXX})"
+  - echo ${SITE_NAME}
   - ctest -D Experimental
