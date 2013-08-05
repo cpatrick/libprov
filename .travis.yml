@@ -8,10 +8,7 @@ script:
   - mkdir _build
   - cd _build
   - cmake ..
-  - cmake --build .
-  - ctest -V .
+  - ctest -VV -S ../CMake/travis_build.cmake
 
 after_script:
-  - export SITE_NAME="Travis (${CXX})"
-  - echo ${SITE_NAME}
-  - ctest -D Experimental
+  - ctest -VV -S ../CMake/travis_submit.cmake
