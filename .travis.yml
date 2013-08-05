@@ -10,3 +10,6 @@ script:
   - cmake ..
   - cmake --build .
   - ctest -V .
+
+after_script:
+  - ctest -D Experimental
