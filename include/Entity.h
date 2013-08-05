@@ -20,6 +20,9 @@
 class Entity
 {
 public:
+
+	typedef std::map<std::string, std::string> AttrMapType;
+
     Entity();
     virtual ~Entity();
 
@@ -27,9 +30,9 @@ public:
     virtual const std::string& getId() const;
 
     virtual void setAttribute(const std::string& key, const std::string& val);
-    virtual const std::string& getAttribute(const std::string& key) const;
+	virtual AttrMapType::const_iterator getAttribute(const std::string& key) const;
 
 protected:
     std::string id;
-    std::map<std::string, std::string> attributes;
+    AttrMapType attributes;
 };

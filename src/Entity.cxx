@@ -43,7 +43,7 @@ void Entity::setAttribute(const std::string& key, const std::string& val)
   this->attributes.insert(pair);
 }
 
-const std::string& Entity::getAttribute(const std::string& key) const
+Entity::AttrMapType::const_iterator Entity::getAttribute(const std::string& key) const
 {
-  return this->attributes.at(key);
+  return this->attributes.find(key);
 }
