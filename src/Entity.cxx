@@ -26,3 +26,24 @@ Entity::~Entity()
 {
 
 }
+
+void Entity::setId(const std::string& id)
+{
+  this->id = id;
+}
+
+const std::string& Entity::getId() const
+{
+  return this->id;
+}
+
+void Entity::setAttribute(const std::string& key, const std::string& val)
+{
+  std::pair<std::string, std::string> pair(key, val);
+  this->attributes.insert(pair);
+}
+
+const std::string& Entity::getAttribute(const std::string& key) const
+{
+  return this->attributes.at(key);
+}

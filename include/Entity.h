@@ -23,6 +23,12 @@ public:
     Entity();
     virtual ~Entity();
 
+    virtual void setId(const std::string& id);
+    virtual const std::string& getId() const;
+
+    virtual void setAttribute(const std::string& key, const std::string& val);
+    virtual const std::string& getAttribute(const std::string& key) const;
+
 protected:
     std::string id;
     std::map<std::string, std::string> attributes;
