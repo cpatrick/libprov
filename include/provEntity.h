@@ -17,22 +17,36 @@
 #include <map>
 #include <string>
 
+#ifndef _provEntity_h_
+#define _provEntity_h_
+
+namespace prov
+{
+
 class Entity
 {
 public:
 
-	typedef std::map<std::string, std::string> AttrMapType;
+  typedef std::map<std::string, std::string> AttrMapType;
+  typedef AttrMapType::const_iterator AttrIterType;
 
-    Entity();
-    virtual ~Entity();
+  Entity();
+  virtual ~Entity();
 
-    virtual void setId(const std::string& id);
-    virtual const std::string& getId() const;
+  virtual void setId(const std::string& id);
+  virtual const std::string& getId() const;
 
-    virtual void setAttribute(const std::string& key, const std::string& val);
-	virtual AttrMapType::const_iterator getAttribute(const std::string& key) const;
+  virtual void setAttribute(const std::string& key, const std::string& val);
+  virtual AttrIterType getAttribute(const std::string& key) const;
+
+  virtual AttrIterType attrNotFound() const;
 
 protected:
-    std::string id;
-    AttrMapType attributes;
+  std::string id;
+  AttrMapType attributes;
+
 };
+
+}
+
+#endif

@@ -20,6 +20,24 @@
 
 int main(int argc, char const *argv[])
 {
-    std::cout << "Test this" << std::endl;
+  prov::Entity e;
+  e.setId("foo");
+  e.setAttribute("key", "val");
+
+  if(e.getId() != "foo")
+    {
+    return -1;
+    }
+
+  if(e.getAttribute("key")->second != "val")
+    {
+    return -1;
+    }
+
+  if(e.getAttribute("notkey") != e.attrNotFound())
+    {
+    return -1;
+    }
+
     return 0;
 }

@@ -14,7 +14,9 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "Entity.h"
+#include "provEntity.h"
+
+namespace prov {
 
 Entity::Entity()
 : id(), attributes()
@@ -43,7 +45,14 @@ void Entity::setAttribute(const std::string& key, const std::string& val)
   this->attributes.insert(pair);
 }
 
-Entity::AttrMapType::const_iterator Entity::getAttribute(const std::string& key) const
+Entity::AttrIterType Entity::getAttribute(const std::string& key) const
 {
   return this->attributes.find(key);
+}
+
+Entity::AttrIterType Entity::attrNotFound() const
+{
+  return this->attributes.end();
+}
+
 }

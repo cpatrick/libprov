@@ -1,3 +1,3 @@
 add_library(prov
-    Entity.cxx
+    provEntity.cxx
 )
