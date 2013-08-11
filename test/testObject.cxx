@@ -20,21 +20,21 @@
 
 int main(int argc, char const *argv[])
 {
-  prov::Entity e;
-  e.setId("foo");
-  e.setAttribute("key", "val");
+  prov::Object object;
+  object.setId("foo");
+  object.setAttribute("key", "val");
 
-  if(e.getId() != "foo")
+  if(object.getId() != "foo")
     {
     return -1;
     }
 
-  if(e.getAttribute("key")->second != "val")
+  if(object.getAttribute("key")->second != "val")
     {
     return -1;
     }
 
-  if(e.getAttribute("notkey") != e.attrNotFound())
+  if(object.getAttribute("notkey") != object.attrNotFound())
     {
     return -1;
     }

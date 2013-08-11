@@ -1,4 +1,5 @@
 
-add_executable(testEntity testEntity.cxx)
-target_link_libraries(testEntity prov)
-add_test(testEntity testEntity)
+# Add the object test
+add_executable(testObject testObject.cxx)
+target_link_libraries(testObject prov)
+add_test(testObject testObject)

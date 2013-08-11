@@ -17,21 +17,21 @@
 #include <map>
 #include <string>
 
-#ifndef _provEntity_h_
-#define _provEntity_h_
+#ifndef _provObject_h_
+#define _provObject_h_
 
 namespace prov
 {
 
-class Entity
+class Object
 {
 public:
 
   typedef std::map<std::string, std::string> AttrMapType;
   typedef AttrMapType::const_iterator AttrIterType;
 
-  Entity();
-  virtual ~Entity();
+  Object();
+  virtual ~Object();
 
   virtual void setId(const std::string& id);
   virtual const std::string& getId() const;

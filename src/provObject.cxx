@@ -14,43 +14,43 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "provEntity.h"
+#include "provObject.h"
 
 namespace prov {
 
-Entity::Entity()
+Object::Object()
 : id(), attributes()
 {
 
 }
 
-Entity::~Entity()
+Object::~Object()
 {
 
 }
 
-void Entity::setId(const std::string& id)
+void Object::setId(const std::string& id)
 {
   this->id = id;
 }
 
-const std::string& Entity::getId() const
+const std::string& Object::getId() const
 {
   return this->id;
 }
 
-void Entity::setAttribute(const std::string& key, const std::string& val)
+void Object::setAttribute(const std::string& key, const std::string& val)
 {
   std::pair<std::string, std::string> pair(key, val);
   this->attributes.insert(pair);
 }
 
-Entity::AttrIterType Entity::getAttribute(const std::string& key) const
+Object::AttrIterType Object::getAttribute(const std::string& key) const
 {
   return this->attributes.find(key);
 }
 
-Entity::AttrIterType Entity::attrNotFound() const
+Object::AttrIterType Object::attrNotFound() const
 {
   return this->attributes.end();
 }
